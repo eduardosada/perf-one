@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  .container {
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .item {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    padding: 0;
+    will-change: transform, opacity;
+    transform-origin: center;
+    transform: scale(0) skew(90deg, 90deg);
+    opacity: 0;
+    transition: transform .5s ease, opacity .35s ease;
+  }
+
+  .is-visible {
+    transform: scale(1) skew(0deg);
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+  <section class="container">
+    <!-- Load images above the fold normally -->
+    <picture>
+      <source srcset="https://i.ibb.co/nrTwmkG/city-m.jpg" media="(max-width: 960px)">
+      <source srcset="https://i.ibb.co/PwZGYrm/city-l.jpg" media="(min-width: 961px)">
+      <img class="fade-in" src="img/city-l.jpg" alt="image"/>
+    </picture>
+
+    <picture>
+      <source srcset="https://i.ibb.co/1Zrrs1D/forest-m.jpg" media="(max-width: 960px)">
+      <source srcset="https://i.ibb.co/ft2WmwC/forest-l.jpg" media="(min-width: 961px)">
+      <img class="fade-in" src="img/forest-l.jpg" alt="image"/>
+    </picture>
+
+    <!-- Lazy load images below the fold -->
+    <picture class="lazy">
+      <source data-srcset="https://i.ibb.co/kJMZpFJ/river-m.jpg" media="(max-width: 960px)">
+      <source data-srcset="https://i.ibb.co/j8TyjFd/river-l.jpg" media="(min-width: 961px)">
+      <img data-srcset="https://i.ibb.co/j8TyjFd/river-l.jpg" alt="image"/>
+    </picture>
+
+    <picture class="lazy">
+      <source data-srcset="https://i.ibb.co/WVmxKW2/desert-m.jpg" media="(max-width: 960px)">
+      <source data-srcset="https://i.ibb.co/D5QyVPk/desert-l.jpg" media="(min-width: 961px)">
+      <img data-srcset="https://i.ibb.co/D5QyVPk/desert-l.jpg" alt="image"/>
+    </picture>
+  </section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const lazyImages = Array.from(document.querySelectorAll(".lazy > source"));
+
+    if ("IntersectionObserver" in window && 'IntersectionObserverEntry' in window) {
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(({ isIntersecting, target }) => {
+          if (isIntersecting) {
+            target.srcset = target.dataset.srcset;
+            target.nextElementSibling.srcset = target.dataset.srcset;
+            target.nextElementSibling.classList.add('fade-in');
+            target.parentElement.classList.remove("lazy");
+            observer.unobserve(target);
+          }
+        });
+      });
+
+      lazyImages.forEach((lazyImage) => observer.observe(lazyImage));
+    }
+  });
+  </script>
+</body>
+</html>

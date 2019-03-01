@@ -1,0 +1,9 @@
+html {
+  background-color: #cddc39;
+}
+
+.image {
+  padding-top: 86.41%;
+  background-image: url(happy.jpg);
+  background-size: cover;
+}
