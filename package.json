@@ -1,0 +1,23 @@
+{
+  "name": "taller-de-rendimiento-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "test",
+    "start": "npx serve --no-compression"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardosada/perf-one.git"
+  },
+  "author": "Eduardo Sada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardosada/perf-one/issues"
+  },
+  "homepage": "https://github.com/eduardosada/perf-one#readme",
+  "dependencies": {
+    "serve": "^10.1.2"
+  }
+}
