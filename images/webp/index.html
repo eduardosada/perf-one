@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebP vs Progressive JPEG</title>
+  <style>
+    div {
+      display: inline-block;
+      width: calc(50vw - 16px);
+      height: calc(50vw * 0.64234);
+      position: relative;
+    }
+
+    div::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: attr(title);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -1;
+      font-size: calc(18px + 1vw);
+      font-family: sans-serif;
+      text-shadow: 2px 2px 0 white, 2px -2px 0 white, -2px 2px 0 white, -2px -2px 0 white,
+                  2px 0px 0 white, 0px 2px 0 white, -2px 0px 0 white, 0px -2px 0 white;
+    }
+
+    div:hover::before { z-index: 1; }
+  </style>
+</head>
+<body>
+  <div title="WEBP 683 kb"><img src="image.webp" alt="" width="100%"></div>
+  <div title="JPEG 1,5 mb"><img src="image.jpeg" alt="" width="100%"></div>
+</body>
+</html>
