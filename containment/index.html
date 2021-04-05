@@ -3,34 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebP vs Progressive JPEG vs AVIF</title>
+  <title>Containment</title>
   <style>
-    body {
+    ul {
       display: flex;
       place-items: center;
       gap: 10px;
       width: 100%;
     }
-    div {
+    li {
       display: inline-flex;
       position: relative;
+      height: 300px;
       flex-basis: 33%;
       flex-direction: column;
       align-items: center;
       font-size: calc(18px + 1vw);
       font-family: sans-serif;
-
+      background: red;
     }
-    img {
-      aspect-ratio: 1600 / 1067;
+    section {
+      display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     }
   </style>
 </head>
 <body>
-  <div><img src="image.webp" alt="" width="1600" height="1067"><span>🚙 WEBP 683 kb</span></div>
-  <div><img src="image.jpeg" alt="" width="1600" height="1067"><span>🚒 JPEG 1,5 mb</span></div>
-  <div><img src="image.avif" alt="" width="1600" height="1067"><span>🏎 AVIF 181 kb</span></div>
+  <ul>
+    <li><section>1</section></li>
+    <li><section>2</section></li>
+    <li><section>3</section></li>
+  </ul>
 </body>
+
+<script>
+  document.addEventListener('click', (e)=>{
+    e.target.style.padding = '10px'
+  })
+</script>
 </html>

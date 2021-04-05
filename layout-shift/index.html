@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLS</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      background-color: #78909c !important;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+    }
+
+    aside {
+      text-align: center;
+    }
+
+    aside input[type] {
+      display: none;
+    }
+
+    aside input[type]+span {
+      display: inline-block;
+      padding: 2px 16px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      font-family: sans-serif;
+      height: 2rem;
+      line-height: 2rem;
+      overflow: hidden;
+      outline-width: 2px;
+      padding: 0 16px;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      border-radius: 16px;
+      margin: 0 2px 8px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    aside input[type]+span {
+      background-color: #ECEFF1;
+      color: rgba(0, 0, 0, 0.55);
+    }
+
+    aside input[type]+span:before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border: 3px solid #cacaca;
+      border-radius: 50%;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    aside input[type]+span:hover {
+      background-color: #d6d6d6;
+    }
+
+    aside input[type]:checked+span {
+      background-color: #ECEFF1;
+    }
+
+    aside input[type]:checked+span:before {
+      background-color: #e91e63;
+      border-color: #e91e63;
+    }
+
+    body aside {
+      font-family: sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    aside h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      line-height: 1;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    aside button {
+      display: inline-block;
+      padding: 2px 16px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      font-family: sans-serif;
+      height: 2rem;
+      line-height: 2rem;
+      overflow: hidden;
+      outline-width: 2px;
+      padding: 0 16px;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      border-radius: 16px;
+      margin: 0 2px 8px 0;
+      cursor: pointer;
+      user-select: none;
+      background-color: #3f51b5;
+      color: white;
+      border: 0;
+      margin-top: 32px;
+    }
+
+    body p {
+      margin-bottom: 6px;
+    }
+
+    body {
+      flex-direction: column !important;
+      flex-wrap: nowrap !important;
+    }
+
+    body header {
+      background: #E91E63;
+      color: white;
+      width: 100%;
+      padding: 32px;
+      box-sizing: border-box;
+      display: block;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    body section {
+      align-self: flex-start;
+      display: flex;
+      width: 100%;
+      flex: 1;
+      background-color: #eceff1;
+    }
+
+    body aside {
+      width: 260px;
+      background: white;
+      padding: 16px;
+    }
+
+    article {
+      flex: 1;
+      padding: 16px;
+      display: block;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .block:not([hidden]) {
+      width: calc(100% - 32px);
+      height: 100px;
+      margin: 16px;
+      float: left;
+      background-color: white;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      box-sizing: border-box;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.1);
+      font-family: serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header>CLS Demo</header>
+  <section>
+    <aside>
+      <h2>Before start</h2>
+      <p>Open your Chrome Developer Tools, go to Customize/More Tools and select Rendering. Enable Layout Shift Regions before you click Play Demo button.
+
+        <h2 style="margin-top:50px">Setup</h2>
+        <p>Layout Shift</p>
+        <label><input id="disableCase" type="radio" name="case1" value="0" checked><span>Prepend</span></label>
+        <label><input id="enableCase" type="radio" name="case1" value="1"><span>Append</span></label>
+
+        <p>Static Footer</p>
+        <label><input id="disableFooter" type="radio" name="case2" value="0" checked><span>Off</span></label>
+        <label><input id="enableFooter" type="radio" name="case2" value="1"><span>On</span></label>
+
+        <div>
+          <button id="playbutton">Play Demo</button>
+        </div>
+    </aside>
+    <article>
+      <div id="output"></div>
+      <div id="footer" class="block" hidden>STATIC FOOTER</div>
+    </article>
+  </section>
+
+
+</body>
+
+<script>
+  const content = document.querySelector('#output');
+
+  var counter = 0;
+  var timer = 0;
+  let type = 'prepend';
+
+  function start() {
+    clear();
+
+    timer = setInterval(() => {
+      if (counter >= 4) {
+        stop();
+      }
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(appendElement);
+      });
+    }, 300);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  function clear() {
+    stop();
+    counter = 0;
+    content.innerHTML = '';
+  }
+
+  function appendElement() {
+    let div = document.createElement('div');
+    div.classList.add('block');
+    div.textContent = ++counter;
+    content[type](div);
+    div = null;
+  }
+
+  function enableCase() {
+    type = 'append';
+  }
+
+  function disableCase() {
+    type = 'prepend';
+  }
+
+  function enableFooter() {
+    document.querySelector('#footer').removeAttribute('hidden');
+  }
+
+  function disableFooter() {
+    document.querySelector('#footer').setAttribute('hidden', true);
+  }
+
+  document.querySelector('#enableCase').addEventListener('change', enableCase);
+  document.querySelector('#disableCase').addEventListener('change', disableCase);
+  document.querySelector('#enableFooter').addEventListener('change', enableFooter);
+  document.querySelector('#disableFooter').addEventListener('change', disableFooter);
+  document.querySelector('#playbutton').addEventListener('click', start);
+</script>
+
+</html>

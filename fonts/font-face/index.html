@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tipografías</title>
+	<style>
+  body.fonts-loaded {
+    --main-default-font: Lato, sans-serif;
+    --main-bold-font: LatoBold, sans-serif;
+    --main-italic-font: LatoItalic, sans-serif;
+    --main-bold-italic-font: LatoBoldItalic, sans-serif;
+  }
+
+	body {
+    font-display: swap;
+    font-family: var(--main-default-font);
+  }
+
+  h1,
+	strong {
+		font-family: var(--main-bold-font);
+		font-weight: 700;
+	}
+
+  em {
+		font-family: var(--main-italic-font);
+		font-style: italic;
+	}
+
+  strong em,
+	em strong {
+		font-family: var(--main-bold-italic-font);
+		font-weight: 700;
+		font-style: italic;
+	}
+	</style>
+	<script>
+	(function() {
+    var fontA = new FontFace('Lato', 'url(font-lato/lato-regular-webfont.woff2)');
+		var fontB = new FontFace('LatoBold','url(font-lato/lato-bold-webfont.woff2)',  { weight: 700 });
+		var fontC = new FontFace('LatoItalic', 'url(font-lato/lato-italic-webfont.woff2)', { style: 'italic' });
+    var fontD = new FontFace('LatoBoldItalic', 'url(font-lato/lato-bolditalic-webfont.woff2)', { weight: 700, style: 'italic' });
+
+    var loadingA = fontA.load();
+    var loadingB = fontB.load();
+    var loadingC = fontC.load();
+    var loadingD = fontD.load();
+
+		Promise.all([
+      loadingA,
+      loadingB,
+      loadingC,
+      loadingD
+		]).then(function () {
+      document.body.classList.add('fonts-loaded');
+      console.log('fonts loaded!');
+    });
+	})();
+	</script>
+</head>
+<body>
+  <h1>FOUT con Class</h1>
+
+  <p>Para probar esta demostración, <strong>activa la opción Slow 3G</strong> en la pestaña de Red tu <em>Chrome Developer Tools</em>. Como podrás ver, se producirá <strong>sólo</strong> un reflow al terminar de cargar <strong><em>todas</em></strong> las webfonts.</strong></p>
+</body>
+</html>

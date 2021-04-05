@@ -3,82 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Lazy Loading Images</title>
   <style>
   .container {
     margin: 0 auto;
     padding: 1rem;
-  }
-
-  .item {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 2rem auto;
-    padding: 0;
-    will-change: transform, opacity;
-    transform-origin: center;
-    transform: scale(0) skew(90deg, 90deg);
-    opacity: 0;
-    transition: transform .5s ease, opacity .35s ease;
-  }
-
-  .is-visible {
-    transform: scale(1) skew(0deg);
-    opacity: 1;
   }
 </style>
 </head>
 <body>
 
   <section class="container">
-    <!-- Load images above the fold normally -->
-    <picture>
-      <source srcset="https://i.ibb.co/nrTwmkG/city-m.jpg" media="(max-width: 960px)">
-      <source srcset="https://i.ibb.co/PwZGYrm/city-l.jpg" media="(min-width: 961px)">
-      <img class="fade-in" src="img/city-l.jpg" alt="image"/>
-    </picture>
-
-    <picture>
-      <source srcset="https://i.ibb.co/1Zrrs1D/forest-m.jpg" media="(max-width: 960px)">
-      <source srcset="https://i.ibb.co/ft2WmwC/forest-l.jpg" media="(min-width: 961px)">
-      <img class="fade-in" src="img/forest-l.jpg" alt="image"/>
-    </picture>
-
-    <!-- Lazy load images below the fold -->
-    <picture class="lazy">
-      <source data-srcset="https://i.ibb.co/kJMZpFJ/river-m.jpg" media="(max-width: 960px)">
-      <source data-srcset="https://i.ibb.co/j8TyjFd/river-l.jpg" media="(min-width: 961px)">
-      <img data-srcset="https://i.ibb.co/j8TyjFd/river-l.jpg" alt="image"/>
-    </picture>
-
-    <picture class="lazy">
-      <source data-srcset="https://i.ibb.co/WVmxKW2/desert-m.jpg" media="(max-width: 960px)">
-      <source data-srcset="https://i.ibb.co/D5QyVPk/desert-l.jpg" media="(min-width: 961px)">
-      <img data-srcset="https://i.ibb.co/D5QyVPk/desert-l.jpg" alt="image"/>
-    </picture>
+    <img loading='lazy' src='https://placekitten.com/400/400' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/401/401' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/402/402' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/403/403' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/404/404' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/405/405' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/406/406' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/407/407' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/408/408' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/409/409' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/410/410' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/411/411' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/412/412' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/413/413' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/414/414' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/415/415' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/416/416' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/417/417' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/418/418' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/419/419' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/420/420' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/421/421' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/422/422' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/423/423' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/424/424' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/425/425' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/426/426' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/427/427' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/428/428' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/429/429' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/430/430' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/431/431' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/432/432' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/433/433' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/434/434' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/435/435' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/436/436' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/437/437' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/438/438' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/439/439' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/440/440' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/441/441' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/442/442' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/443/443' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/444/444' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/445/445' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/446/446' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/447/447' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/448/448' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/449/449' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/450/450' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/451/451' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/452/452' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/453/453' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/454/454' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/455/455' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/456/456' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/457/457' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/458/458' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/459/459' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/460/460' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/461/461' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/462/462' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/463/463' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/464/464' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/465/465' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/466/466' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/467/467' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/468/468' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/469/469' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/470/470' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/471/471' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/472/472' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/473/473' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/474/474' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/475/475' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/476/476' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/477/477' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/478/478' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/479/479' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/480/480' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/481/481' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/482/482' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/483/483' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/484/484' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/485/485' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/486/486' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/487/487' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/488/488' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/489/489' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/490/490' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/491/491' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/492/492' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/493/493' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/494/494' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/495/495' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/496/496' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/497/497' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/498/498' width='400' height='400' alt=''>
+    <img loading='lazy' src='https://placekitten.com/499/499' width='400' height='400' alt=''>
   </section>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    const lazyImages = Array.from(document.querySelectorAll(".lazy > source"));
-
-    if ("IntersectionObserver" in window && 'IntersectionObserverEntry' in window) {
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(({ isIntersecting, target }) => {
-          if (isIntersecting) {
-            target.srcset = target.dataset.srcset;
-            target.nextElementSibling.srcset = target.dataset.srcset;
-            target.nextElementSibling.classList.add('fade-in');
-            target.parentElement.classList.remove("lazy");
-            observer.unobserve(target);
-          }
-        });
-      });
-
-      lazyImages.forEach((lazyImage) => observer.observe(lazyImage));
-    }
-  });
-  </script>
 </body>
 </html>

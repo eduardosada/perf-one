@@ -1,0 +1,317 @@
+.monster {
+  font-size: 12rem;
+  margin: 0 20px 1em;
+  width: 1em;
+  height: 1.2em;
+  border-radius: 0.5em 0.5em 0.5em 0.5em / 0.6em 0.6em 0.2em 0.2em;
+  box-sizing: content-box;
+  border: 0.07em solid transparent;
+  position: relative;
+  user-select: none;
+}
+
+.monster.small {
+  font-size: 4rem;
+}
+
+.monster.gpu .body {
+  animation: bouncebody-gpu alternate infinite 400ms 40ms ease-in-out;
+}
+
+.monster.gpu .eyes {
+  animation: bounce-gpu alternate infinite 400ms ease-in-out;
+}
+
+.monster.gpu .eye {
+  animation: blink-gpu forwards infinite 10s ease-in-out;
+}
+
+.monster.gpu .jaw {
+  animation: bouncebody-gpu alternate infinite 400ms 40ms ease-in-out;
+}
+
+.monster.gpu .cross {
+  animation: bounce-gpu alternate infinite 600ms ease-in-out;
+}
+
+.monster.cpu .body {
+  animation: bouncebody-cpu alternate infinite 400ms 40ms ease-in-out;
+}
+
+.monster.cpu .eyes {
+  animation: bounce-cpu alternate infinite 400ms ease-in-out;
+}
+
+.monster.cpu .eye {
+  animation: blink-cpu forwards infinite 10s ease-in-out;
+}
+
+.monster.cpu .jaw {
+  animation: bouncebody-cpu alternate infinite 400ms 40ms ease-in-out;
+}
+
+.monster.cpu .cross {
+  animation: bounce-cpu alternate infinite 600ms ease-in-out;
+}
+.body {
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  border-radius: inherit;
+  position: relative;
+  transform-origin: bottom center;
+  overflow: hidden;
+}
+
+.eyes {
+  text-align: center;
+  display: flex;
+  font-size: 0.65em;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: 0.25em;
+  top: 0.3em;
+}
+
+.eye {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5em 0.5em 0.5em 0.5em / 0.6em 0.6em 0.4em 0.4em;
+  box-shadow: 0.03em 0.14em rgba(0, 0, 0, 0.1);
+}
+
+.eye:nth-last-child(n + 2),
+.eye:nth-last-child(n + 2) ~ .eye {
+  width: 1em;
+  height: 1em;
+  font-size: 0.5em;
+}
+
+.pupil {
+  --pupil-size: 0.6em;
+  position: absolute;
+  content: " ";
+  width: var(--pupil-size);
+  height: var(--pupil-size);
+  border-radius: 50%;
+  background-color: black;
+  box-sizing: border-box;
+  transform: translateX(calc(0.5 * 0.3em + 0.05em))
+    translateY(calc(0.5 * 0.3em + 0.05em));
+}
+
+.pupil::before {
+  content: " ";
+  width: 0.25em;
+  height: 0.25em;
+  transform: translateX(-0.05em);
+  background-color: white;
+  display: block;
+  border-radius: 50%;
+}
+
+.headband {
+  position: absolute;
+  width: 1.2em;
+  height: 0.05em;
+  top: 0.23em;
+  background: #131313;
+  transform: rotate(30deg);
+}
+
+.patch {
+  position: relative;
+  top: 0.2em;
+  left: 0.3em;
+  background: #131313;
+  border-radius: 6px 6px 25px 25px;
+  width: 1em;
+  height: 1em;
+  font-size: 0.4em;
+}
+
+.nose {
+  width: 0.124em;
+  height: 0.14em;
+  background: #8a3900;
+  border-radius: 12px 12px 3px 3px;
+  position: absolute;
+  left: calc(50% - 0.124em / 2);
+  top: 0;
+}
+
+.mouth {
+  font-size: 0.2em;
+  width: 1em;
+  height: 0.3em;
+  background: black;
+  border-radius: 1.5em 1.5em 0.5em 0.5em;
+  position: absolute;
+  bottom: 0.8em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouth::before {
+  width: 50%;
+  height: 30%;
+  display: block;
+  content: " ";
+  background-color: #ff8800;
+  border-radius: 50% / 100% 100% 50% 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-10%) translateX(-50%);
+}
+
+.vampi-mouth {
+  position: absolute;
+  background: #8a3900;
+  overflow: hidden;
+  font-size: 0.3em;
+  width: 1.8em;
+  height: 0.7em;
+  left: 50%;
+  bottom: 0.6em;
+  transform: translateX(-50%);
+  border-radius: 0.7em 0.7em 1.2em 1.2em;
+}
+
+.vampi-tooth::before,
+.vampi-tooth::after,
+.vampi-tooth {
+  --teeth-size: 0.25em;
+  display: block;
+  width: var(--teeth-size);
+  height: calc(var(--teeth-size) * 1.4);
+  border-radius: 0 0 calc(var(--teeth-size) / 2) calc(var(--teeth-size) / 2);
+  background: white;
+  font-size: inherit;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vampi-tooth:before {
+  content: "";
+  transform: translateX(-150%);
+}
+
+.vampi-tooth:after {
+  content: "";
+  transform: translateX(50%);
+}
+
+.jaw {
+  width: 80%;
+  height: 80%;
+  background-color: currentColor;
+  border-radius: 50% 50% 50% 50% / 75% 75% 25% 25%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.cross {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+}
+
+.bone {
+  --bone-color: #ffdbc2;
+  position: absolute;
+  width: 100%;
+  height: 0.12em;
+  top: 50%;
+  left: 50%;
+  background: var(--bone-color);
+  border-radius: 6px;
+}
+
+.bone.one {
+  z-index: 1;
+  transform: translateX(-50%) rotate(22deg);
+}
+
+.bone.two {
+  --bone-color: #e8bea0;
+  transform: translateX(-50%) rotate(-22deg);
+}
+
+.bone .circle {
+  position: absolute;
+  width: 0.15em;
+  height: 0.1em;
+  background: var(--bone-color);
+  border: 0.1em solid transparent;
+  border-top: 0px solid #8a3900;
+  border-left: 0px solid #8a3900;
+  border-right: 0px solid #8a3900;
+  border-radius: 50%;
+}
+
+.bone .circle.left.top {
+  transform: rotate(-45deg);
+}
+
+.bone .circle.left.bottom {
+  transform: rotate(-135deg);
+}
+
+.bone .circle.right.top {
+  transform: rotate(45deg);
+}
+
+.bone .circle.right.bottom {
+  transform: rotate(135deg);
+}
+
+.bone .circle.bottom {
+  bottom: -0.1em;
+}
+.bone .circle.top {
+  z-index: 1;
+  top: -0.1em;
+}
+.bone .circle.left {
+  left: -0.1em;
+}
+.bone .circle.right {
+  right: -0.1em;
+}
+
+@keyframes blink-gpu {
+  0%,
+  2%,
+  60%,
+  62%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+
+  1%,
+  61% {
+    transform: scaleX(1.3) scaleY(0.1);
+  }
+}
+
+@keyframes bounce-gpu {
+  to {
+    transform: translateY(4%);
+  }
+}
+
+@keyframes bouncebody-gpu {
+  to {
+    transform: scaleX(1.03) scaleY(0.97);
+  }
+}
