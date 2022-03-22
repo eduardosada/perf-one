@@ -1,11 +1,13 @@
 {
   "headers": [
     {
-      "source" : "**/*.*",
-      "headers" : [{
-        "key" : "Cache-Control",
-        "value" : "no-cache, no-store"
-      }]
+      "source": "**/*.*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store"
+        }
+      ]
     }
   ],
   "unlisted": [

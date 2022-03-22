@@ -1,175 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIrata!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pirate.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PIrata!</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="pirate.css">
-
-  <style>
-    body,
-    html {
-      all: initial;
-      min-height: 100%;
-      position: relative;
-    }
-
-    body {
-      font-family: 'Pirata One', cursive;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #263238;
-      color: white;
-    }
-
-    .monster {
-      font-size: 8rem;
-    }
-
-    .form {
-      margin: 40px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-    }
-
-    .input {
-      width: 12ch;
-      height: 40px;
-      font-size: 20px;
-      border-radius: 3px;
-      border: 1px solid #90a4ae;
-      font-weight: lighter;
-      margin: 0 30px;
-    }
-
-    #start {
-      background-color: #ffc107;
-      border-radius: 3px;
-      width: 100px;
-      height: 40px;
-      border: 1px solid #ff9800;
-      margin-left: 10px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: inherit;
-    }
-
-    #digits {
-      font-family: system-ui;
-      font-variant: tabular-nums;
-      width: 61ch;
-      font-size: 16px;
-      line-height: 1.4;
-    }
-
-    #elapsed {
-      font-size: 45px;
-      color: #ffce39;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="monster gpu" style="color: #ffdbc2">
-    <div class="body">
-      <div class="headband"></div>
-    </div>
-    <div class="jaw">
-      <div class="nose"></div>
-      <div class="vampi-mouth">
-        <div class="vampi-tooth"></div>
-      </div>
-    </div>
-    <div class="eyes">
-      <div class="eye">
-        <div class="pupil"></div>
-      </div>
-      <div class="patch"></div>
-    </div>
-
-    <div class="cross">
-      <div class="bone one">
-        <div class="circle left top"></div>
-        <div class="circle left bottom"></div>
-        <div class="circle right top"></div>
-        <div class="circle right bottom"></div>
-      </div>
-
-      <div class="bone two">
-        <div class="circle left top"></div>
-        <div class="circle left bottom"></div>
-        <div class="circle right top"></div>
-        <div class="circle right bottom"></div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="form">
-    Saquear
-    <select id="digitsinput" class="input">
-      <option value="10000">10.000</option>
-      <option value="20000">20.000</option>
-      <option value="30000">30.000</option>
-      <option value="40000">40.000</option>
-      <option value="50000">50.000</option>
-    </select>
-    dígitos.
-    <button id="start">Ahoy!</button>
-  </div>
-
-  <span id="elapsed"></span>
-
-  <span id="digits"></span>
-</body>
-
-<script>
-  let i, x, pi;
-
-  function doSomeCalcs() {
-    if (x > 0) {
-      for (let j = 0; j < 100; ++j) {
-        x = x * i / ((i + 1n) * 4n);
-        pi += x / (i + 2n);
-        i += 2n;
+    <style>
+      body,
+      html {
+        all: initial;
+        min-height: 100%;
+        position: relative;
       }
 
-      doSomeCalcs();
+      body {
+        font-family: "Pirata One", cursive;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #263238;
+        color: white;
+      }
+
+      .monster {
+        font-size: 8rem;
+      }
+
+      .form {
+        margin: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+      }
+
+      .input {
+        width: 12ch;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 3px;
+        border: 1px solid #90a4ae;
+        font-weight: lighter;
+        margin: 0 30px;
+      }
+
+      #start {
+        background-color: #ffc107;
+        border-radius: 3px;
+        width: 100px;
+        height: 40px;
+        border: 1px solid #ff9800;
+        margin-left: 10px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
+      }
+
+      #digits {
+        font-family: system-ui;
+        font-variant: tabular-nums;
+        width: 61ch;
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      #elapsed {
+        font-size: 45px;
+        color: #ffce39;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="monster gpu" style="color: #ffdbc2">
+      <div class="body">
+        <div class="headband"></div>
+      </div>
+      <div class="jaw">
+        <div class="nose"></div>
+        <div class="vampi-mouth">
+          <div class="vampi-tooth"></div>
+        </div>
+      </div>
+      <div class="eyes">
+        <div class="eye">
+          <div class="pupil"></div>
+        </div>
+        <div class="patch"></div>
+      </div>
+
+      <div class="cross">
+        <div class="bone one">
+          <div class="circle left top"></div>
+          <div class="circle left bottom"></div>
+          <div class="circle right top"></div>
+          <div class="circle right bottom"></div>
+        </div>
+
+        <div class="bone two">
+          <div class="circle left top"></div>
+          <div class="circle left bottom"></div>
+          <div class="circle right top"></div>
+          <div class="circle right bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form">
+      Saquear
+      <select id="digitsinput" class="input">
+        <option value="10000">10.000</option>
+        <option value="20000">20.000</option>
+        <option value="30000">30.000</option>
+        <option value="40000">40.000</option>
+        <option value="50000">50.000</option>
+      </select>
+      dígitos.
+      <button id="start">Ahoy!</button>
+    </div>
+
+    <span id="elapsed"></span>
+
+    <span id="digits"></span>
+  </body>
+
+  <script>
+    let i, x, pi;
+
+    function doSomeCalcs() {
+      if (x > 0) {
+        for (let j = 0; j < 100; ++j) {
+          x = (x * i) / ((i + 1n) * 4n);
+          pi += x / (i + 2n);
+          i += 2n;
+        }
+
+        doSomeCalcs();
+      }
     }
-  }
 
-  function startCalcs(digits) {
-    i = 1n;
-    x = 3n * (10n ** (BigInt(digits) + 20n));
-    pi = x;
-    doSomeCalcs();
+    function startCalcs(digits) {
+      i = 1n;
+      x = 3n * 10n ** (BigInt(digits) + 20n);
+      pi = x;
+      doSomeCalcs();
 
-    return pi;
-  }
+      return pi;
+    }
 
-  let startTime;
+    let startTime;
 
-  document.getElementById('start').onclick = function () {
-    startTime = new Date();
+    document.getElementById("start").onclick = function () {
+      startTime = new Date();
 
-    const digitsstr = document.getElementById('digitsinput').value;
-    const digitsnum = parseInt(digitsstr);
+      const digitsstr = document.getElementById("digitsinput").value;
+      const digitsnum = parseInt(digitsstr);
 
-    const piNumber = startCalcs(digitsnum);
-    const pistr10 = (pi / (10n ** 20n)).toString(10);
-    const elapsed = ((new Date() - startTime) / 1000).toFixed(3) + " s";;
+      const piNumber = startCalcs(digitsnum);
+      const pistr10 = (pi / 10n ** 20n).toString(10);
+      const elapsed = ((new Date() - startTime) / 1000).toFixed(3) + " s";
 
-    document.getElementById('digits').innerHTML = pistr10.replace(/.{10}/g, "$& ");
-    document.getElementById('elapsed').textContent = elapsed;
-  };
-</script>
-
+      document.getElementById("digits").innerHTML = pistr10.replace(
+        /.{10}/g,
+        "$& "
+      );
+      document.getElementById("elapsed").textContent = elapsed;
+    };
+  </script>
 </html>
