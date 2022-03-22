@@ -1,0 +1,15 @@
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #37474f;
+  color: white;
+  font-family: sans-serif;
+  padding: 128px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
