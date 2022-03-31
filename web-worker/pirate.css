@@ -101,8 +101,7 @@
   border-radius: 50%;
   background-color: black;
   box-sizing: border-box;
-  transform: translateX(calc(0.5 * 0.3em + 0.05em))
-    translateY(calc(0.5 * 0.3em + 0.05em));
+  transform: translateX(calc(0.5 * 0.3em + 0.05em)) translateY(calc(0.5 * 0.3em + 0.05em));
 }
 
 .pupil::before {

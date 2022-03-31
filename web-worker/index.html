@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PIrata!</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="pirate.css" />
 
     <style>
@@ -168,10 +165,7 @@
       const pistr10 = (pi / 10n ** 20n).toString(10);
       const elapsed = ((new Date() - startTime) / 1000).toFixed(3) + " s";
 
-      document.getElementById("digits").innerHTML = pistr10.replace(
-        /.{10}/g,
-        "$& "
-      );
+      document.getElementById("digits").innerHTML = pistr10.replace(/.{10}/g, "$& ");
       document.getElementById("elapsed").textContent = elapsed;
     };
   </script>
