@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prefers-reduced-data example</title>
+    <style>
+      body {
+        display: flex;
+        place-items: center;
+        margin: 0;
+        width: 100%;
+      }
+      div {
+        display: inline-flex;
+        position: relative;
+        flex-basis: 33%;
+        flex-direction: column;
+        align-items: center;
+        font-size: calc(18px + 1vw);
+        font-family: sans-serif;
+      }
+      picture {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      img {
+        aspect-ratio: 1600 / 1067;
+        width: 100vw;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <picture>
+      <source srcset="image-lqip.jpg" media="(prefers-reduced-data: reduce)" />
+      <source srcset="image-360w.avif" type="image/avif" media="(max-width: 360px)" />
+      <source srcset="image-360w.webp" type="image/webp" media="(max-width: 360px)" />
+      <source srcset="image.avif" type="image/avif" media="(min-width: 360px)" />
+      <source srcset="image.webp" type="image/webp" media="(min-width: 360px)" />
+      <img srcset="image-360w.jpg 360w, image.jpg 1600w" src="image.jpg" alt="" />
+    </picture>
+  </body>
+</html>
