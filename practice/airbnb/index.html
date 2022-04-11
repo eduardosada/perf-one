@@ -1,97 +1,753 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Taller de Rendimiento - Sitio de prueba</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="shortcut icon" sizes="76x76" type="image/x-icon" href="./favicon.ico" />
-  <script src="./main.js"></script>
-</head>
-<body>
-  <div class="w-hero">
-    <div class="w-hero__header">
-      <header>
-        <div class="logo"></div>
-        <ul>
-          <li><a href="#">Conviértete en anfitrión</a></li>
-          <li><a href="#">Ayuda</a></li>
-          <li><a href="#">Regístrate</a></li>
-          <li><a href="#">Inicia sesión</a></li>
-        </ul>
-      </header>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="locale" content="es" />
+    <meta name="google" content="notranslate" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb FAKE</title>
+    <meta id="csrf-param-meta-tag" name="csrf-param" content="authenticity_token" />
+    <meta id="csrf-token-meta-tag" name="csrf-token" content="" />
+    <meta id="english-canonical-url" content="" />
+    <meta name="twitter:widgets:csp" content="on" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Airbnb" />
+    <meta name="apple-mobile-web-app-title" content="Airbnb" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="msapplication-starturl" content="/?utm_source=homescreen" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://www.airbnb.es/luxury" />
+    <meta property="og:title" content="Alquileres vacacionales y villas de lujo | Luxury Retreats | Airbnb Luxe" />
+    <meta
+      property="og:description"
+      content="Lo mejor de Luxury Retreats lo tienes ahora en Airbnb Luxe: los alojamientos más extraordinarios del mundo con el servicio más exclusivo."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:height" content="900" />
+    <meta property="og:image:width" content="1600" />
+    <meta
+      property="og:image"
+      content="https://a0.muscache.com/4ea/air/v2/pictures/8d5a70ad-d2f4-4821-a5b2-12dd86cc096a.jpg?t=c:w16-h9-gs"
+    />
+    <meta
+      name="description"
+      content="Lo mejor de Luxury Retreats lo tienes ahora en Airbnb Luxe: los alojamientos más extraordinarios del mundo con el servicio más exclusivo."
+    />
+    <link rel="canonical" href="https://www.airbnb.es/luxury" />
+    <link rel="alternate" hreflang="en" href="https://www.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="es-US" href="https://es.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="de" href="https://www.airbnb.de/luxury" />
+    <link rel="alternate" hreflang="it" href="https://www.airbnb.it/luxury" />
+    <link rel="alternate" hreflang="es-ES" href="https://www.airbnb.es/luxury" />
+    <link rel="alternate" hreflang="fr" href="https://www.airbnb.fr/luxury" />
+    <link rel="alternate" hreflang="pt" href="https://www.airbnb.com.br/luxury" />
+    <link rel="alternate" hreflang="da" href="https://www.airbnb.dk/luxury" />
+    <link rel="alternate" hreflang="en-GB" href="https://www.airbnb.co.uk/luxury" />
+    <link rel="alternate" hreflang="ru" href="https://www.airbnb.ru/luxury" />
+    <link rel="alternate" hreflang="pl" href="https://www.airbnb.pl/luxury" />
+    <link rel="alternate" hreflang="ko" href="https://www.airbnb.co.kr/luxury" />
+    <link rel="alternate" hreflang="cs" href="https://www.airbnb.cz/luxury" />
+    <link rel="alternate" hreflang="hu" href="https://www.airbnb.hu/luxury" />
+    <link rel="alternate" hreflang="de-AT" href="https://www.airbnb.at/luxury" />
+    <link rel="alternate" hreflang="pt-PT" href="https://www.airbnb.pt/luxury" />
+    <link rel="alternate" hreflang="el" href="https://www.airbnb.gr/luxury" />
+    <link rel="alternate" hreflang="tr" href="https://www.airbnb.com.tr/luxury" />
+    <link rel="alternate" hreflang="nl" href="https://www.airbnb.nl/luxury" />
+    <link rel="alternate" hreflang="sv" href="https://www.airbnb.se/luxury" />
+    <link rel="alternate" hreflang="zh-TW" href="https://www.airbnb.com.tw/luxury" />
+    <link rel="alternate" hreflang="zh-HK" href="https://www.airbnb.com.hk/luxury" />
+    <link rel="alternate" hreflang="en-SG" href="https://www.airbnb.com.sg/luxury" />
+    <link rel="alternate" hreflang="id" href="https://www.airbnb.co.id/luxury" />
+    <link rel="alternate" hreflang="ms" href="https://www.airbnb.com.my/luxury" />
+    <link rel="alternate" hreflang="en-AU" href="https://www.airbnb.com.au/luxury" />
+    <link rel="alternate" hreflang="ja" href="https://www.airbnb.jp/luxury" />
+    <link rel="alternate" hreflang="is" href="https://www.airbnb.is/luxury" />
+    <link rel="alternate" hreflang="no" href="https://www.airbnb.no/luxury" />
+    <link rel="alternate" hreflang="de-CH" href="https://www.airbnb.ch/luxury" />
+    <link rel="alternate" hreflang="fr-CH" href="https://fr.airbnb.ch/luxury" />
+    <link rel="alternate" hreflang="it-CH" href="https://it.airbnb.ch/luxury" />
+    <link rel="alternate" hreflang="en-NZ" href="https://www.airbnb.co.nz/luxury" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.airbnb.ca/luxury" />
+    <link rel="alternate" hreflang="fr-CA" href="https://fr.airbnb.ca/luxury" />
+    <link rel="alternate" hreflang="nl-BE" href="https://www.airbnb.be/luxury" />
+    <link rel="alternate" hreflang="fr-BE" href="https://fr.airbnb.be/luxury" />
+    <link rel="alternate" hreflang="fi" href="https://www.airbnb.fi/luxury" />
+    <link rel="alternate" hreflang="en-IE" href="https://www.airbnb.ie/luxury" />
+    <link rel="alternate" hreflang="ga" href="https://ga.airbnb.ie/luxury" />
+    <link rel="alternate" hreflang="ca" href="https://www.airbnb.cat/luxury" />
+    <link rel="alternate" hreflang="en-IN" href="https://www.airbnb.co.in/luxury" />
+    <link rel="alternate" hreflang="hi" href="https://hi.airbnb.co.in/luxury" />
+    <link rel="alternate" hreflang="es-MX" href="https://www.airbnb.mx/luxury" />
+    <link rel="alternate" hreflang="es-CL" href="https://www.airbnb.cl/luxury" />
+    <link rel="alternate" hreflang="es-CR" href="https://www.airbnb.co.cr/luxury" />
+    <link rel="alternate" hreflang="es-VE" href="https://www.airbnb.co.ve/luxury" />
+    <link rel="alternate" hreflang="es-AR" href="https://www.airbnb.com.ar/luxury" />
+    <link rel="alternate" hreflang="es-BO" href="https://www.airbnb.com.bo/luxury" />
+    <link rel="alternate" hreflang="es-BZ" href="https://www.airbnb.com.bz/luxury" />
+    <link rel="alternate" hreflang="es-CO" href="https://www.airbnb.com.co/luxury" />
+    <link rel="alternate" hreflang="es-EC" href="https://www.airbnb.com.ec/luxury" />
+    <link rel="alternate" hreflang="es-GT" href="https://www.airbnb.com.gt/luxury" />
+    <link rel="alternate" hreflang="es-HN" href="https://www.airbnb.com.hn/luxury" />
+    <link rel="alternate" hreflang="es-NI" href="https://www.airbnb.com.ni/luxury" />
+    <link rel="alternate" hreflang="es-PA" href="https://www.airbnb.com.pa/luxury" />
+    <link rel="alternate" hreflang="es-PE" href="https://www.airbnb.com.pe/luxury" />
+    <link rel="alternate" hreflang="es-PY" href="https://www.airbnb.com.py/luxury" />
+    <link rel="alternate" hreflang="es-SV" href="https://www.airbnb.com.sv/luxury" />
+    <link rel="alternate" hreflang="en-MT" href="https://www.airbnb.com.mt/luxury" />
+    <link rel="alternate" hreflang="mt" href="https://mt.airbnb.com.mt/luxury" />
+    <link rel="alternate" hreflang="en-GY" href="https://www.airbnb.gy/luxury" />
+    <link rel="alternate" hreflang="en-AE" href="https://www.airbnb.ae/luxury" />
+    <link rel="alternate" hreflang="tl" href="https://www.airbnb.com.ph/luxury" />
+    <link rel="alternate" hreflang="vi" href="https://www.airbnb.com.vn/luxury" />
+    <link rel="alternate" hreflang="en-ZA" href="https://www.airbnb.co.za/luxury" />
+    <link rel="alternate" hreflang="xh" href="https://xh.airbnb.co.za/luxury" />
+    <link rel="alternate" hreflang="zu" href="https://zu.airbnb.co.za/luxury" />
+    <link rel="alternate" hreflang="uk" href="https://www.airbnb.com.ua/luxury" />
+    <link rel="alternate" hreflang="hy" href="https://www.airbnb.am/luxury" />
+    <link rel="alternate" hreflang="az" href="https://www.airbnb.az/luxury" />
+    <link rel="alternate" hreflang="bs" href="https://www.airbnb.ba/luxury" />
+    <link rel="alternate" hreflang="et" href="https://www.airbnb.com.ee/luxury" />
+    <link rel="alternate" hreflang="ro" href="https://www.airbnb.com.ro/luxury" />
+    <link rel="alternate" hreflang="lt" href="https://www.airbnb.lt/luxury" />
+    <link rel="alternate" hreflang="lv" href="https://www.airbnb.lv/luxury" />
+    <link rel="alternate" hreflang="sr-ME" href="https://www.airbnb.me/luxury" />
+    <link rel="alternate" hreflang="sr" href="https://www.airbnb.rs/luxury" />
+    <link rel="alternate" hreflang="sl" href="https://www.airbnb.si/luxury" />
+    <link rel="alternate" hreflang="es" href="https://es-l.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="hr" href="https://hr.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="sw" href="https://sw.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="sq" href="https://sq.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="sk" href="https://sk.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="bg" href="https://bg.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="mk" href="https://mk.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="he" href="https://he.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="ar" href="https://ar.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="th" href="https://th.airbnb.com/luxury" />
+    <link rel="alternate" hreflang="ka" href="https://ka.airbnb.com/luxury" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Alquileres vacacionales y villas de lujo | Luxury Retreats | Airbnb Luxe" />
+    <meta name="twitter:site" content="@airbnb_es" />
+    <meta name="twitter:app:name:iphone" content="Airbnb" />
+    <meta name="twitter:app:name:ipad" content="Airbnb" />
+    <meta name="twitter:app:name:googleplay" content="Airbnb" />
+    <meta name="twitter:app:id:iphone" content="401626263" />
+    <meta name="twitter:app:id:ipad" content="401626263" />
+    <meta name="twitter:app:id:googleplay" content="com.airbnb.android" />
+    <meta name="twitter:url" content="https://www.airbnb.es/luxury" />
+    <script>
+      (function () {
+        var pgRequest = new XMLHttpRequest();
+        var diffStamp = Date.now().toString() + Math.random().toString().substring(2);
+        pgRequest.open(
+          "GET",
+          "/pg_pixel?r=" + encodeURIComponent(document.referrer || "") + "&diff=" + diffStamp,
+          true
+        );
+        pgRequest.send();
+      })();
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" sizes="76x76" type="image/x-icon" href="./favicon.ico" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <div class="hero-img" style="background-image: url(images/hero-image.avif)"></div>
 
-    <div class="c-hero">
-      <div>
-        <h1>Planifica tu próximo viaje</h1>
-
-        <div></div>
-      </div>
-    </div>
-
-  </div>
-
-  <main>
-    <section>
-      <div>
-        <h3>Descubre con nosotros</h3>
-
-        <div class="w-mini-items">
-          <div class="c-mini-item">
-            <img src="images/alojamientos.jpg" alt="Habitación bonita">
-            <span>Alojamientos</span>
+        <div class="hero-contain">
+          <div class="logo-mobile">
+            <img src="images/logo.svg" alt="" id="FMP-target" />
           </div>
-          <div class="c-mini-item">
-            <img src="images/experiencias.jpg" alt="Tres chicas andando en bicicleta">
-            <span>Experiencias</span>
+
+          <div class="logo-desktop">
+            <img src="images/logo-desktop.svg" alt="" />
           </div>
-          <div class="c-mini-item">
-            <img src="images/restaurantes.jpg" alt="Mesa con comida">
-            <span>Restaurantes</span>
+
+          <h1>Planifica tu próximo viaje</h1>
+
+          <div class="search">
+            <label class="input-wrapper">
+              <div class="input">
+                <span class="label">Destino</span>
+                <input type="text" placeholder="En cualquier lugar" />
+              </div>
+            </label>
+            <label class="input-wrapper">
+              <div class="input">
+                <span class="label">Llegada</span>
+                <input type="text" placeholder="Añadir fecha" />
+              </div>
+              <div class="input">
+                <span class="label">Salida</span>
+                <input type="text" placeholder="Añadir fecha" />
+              </div>
+            </label>
+            <label class="input-wrapper">
+              <div class="input">
+                <span class="label">Adultos</span>
+                <input type="text" placeholder="1" />
+              </div>
+              <div class="input">
+                <span class="label">Niños</span>
+                <input type="text" placeholder="0" />
+              </div>
+            </label>
+
+            <button class="button">
+              <img src="images/search-icon.svg" alt="" width="12" height="12" />
+              Buscar
+            </button>
           </div>
         </div>
       </div>
 
-      <div>
-        <div class="w-hero-plus">
-          <h3>Presentamos nuestro servicio Plus</h3>
-          <p>Una nueva selección de alojamientos de calidad y comodidad verificadas</p>
-
-          <div class="c-hero-plus">
-            <svg viewbox="0 0 370 439" fill="#484848" height="96px" aria-label="Airbnb Plus branding" focusable="false" width="188.7866108786611px"><path d="M104.707 148.464c-.512-1.438-1.109-2.83-1.677-4.118a386.734 386.734 0 0 0-2.678-5.889l-.07-.152a1318.773 1318.773 0 0 0-25.22-51.674l-.374-.728c-.9-1.75-1.832-3.56-2.787-5.337-1.116-2.076-2.352-4.275-4.1-6.322-3.766-4.412-8.966-6.842-14.645-6.842s-10.88 2.431-14.648 6.845c-1.746 2.048-2.981 4.245-4.098 6.321a341.749 341.749 0 0 0-2.812 5.387l-.348.676a1319.873 1319.873 0 0 0-25.22 51.673l-.114.25a388.09 388.09 0 0 0-2.632 5.791c-.569 1.288-1.166 2.678-1.678 4.12-1.497 4.213-1.941 8.24-1.359 12.308 1.219 8.513 6.924 15.809 14.89 19.041a24.699 24.699 0 0 0 9.335 1.81c.995 0 2.007-.06 3.007-.176 3.833-.445 7.695-1.75 11.48-3.88 4.629-2.606 9.202-6.425 14.197-11.883 4.996 5.458 9.569 9.277 14.199 11.883 3.784 2.13 7.646 3.435 11.478 3.88 1 .116 2.013.175 3.008.175a24.69 24.69 0 0 0 9.334-1.809c7.965-3.231 13.671-10.528 14.891-19.041.582-4.067.137-8.093-1.36-12.31zm-51.55 6.352c-6.213-7.89-10.2-15.216-11.599-21.358-.587-2.578-.721-4.947-.398-7.041.278-1.812.9-3.431 1.848-4.815 2.145-3.127 5.938-4.994 10.15-4.994 4.209 0 8.002 1.867 10.147 4.996.949 1.383 1.57 3.003 1.849 4.815.322 2.097.187 4.466-.4 7.044-1.401 6.141-5.387 13.465-11.598 21.353zm45.897 5.35a17.098 17.098 0 0 1-10.46 13.375c-2.745 1.114-5.746 1.506-8.796 1.153-2.919-.34-5.792-1.322-8.783-3.005-4.14-2.33-8.331-5.908-13.048-11.157 7.508-9.275 12.197-17.824 13.933-25.439.794-3.481.962-6.774.5-9.788-.448-2.908-1.474-5.548-3.05-7.846-3.511-5.123-9.565-8.182-16.195-8.182-6.627 0-12.68 3.058-16.192 8.18-1.576 2.298-2.601 4.938-3.048 7.845-.464 3.01-.297 6.302.496 9.784 1.735 7.618 6.424 16.169 13.934 25.447-4.716 5.248-8.907 8.825-13.048 11.156-2.99 1.683-5.863 2.666-8.782 3.005-3.049.353-6.052-.039-8.797-1.153a17.095 17.095 0 0 1-10.46-13.376c-.418-2.923-.095-5.742 1.018-8.872.41-1.154.889-2.286 1.483-3.632.84-1.903 1.732-3.838 2.595-5.709l.116-.251a1318.605 1318.605 0 0 1 25.196-51.625l.35-.682a336.93 336.93 0 0 1 2.765-5.295c.972-1.808 1.95-3.555 3.236-5.063 2.403-2.815 5.563-4.303 9.14-4.303 3.575 0 6.734 1.487 9.137 4.302 1.287 1.508 2.265 3.255 3.236 5.061a333.39 333.39 0 0 1 2.74 5.247l.377.734a1317.39 1317.39 0 0 1 25.196 51.625l.071.155a379.704 379.704 0 0 1 2.64 5.805c.595 1.347 1.075 2.48 1.484 3.63 1.111 3.132 1.434 5.951 1.016 8.873zm194.117-43.622c0-33.068 4.234-63.313 11.695-83.88 5.04-14.316 11.492-25.002 19.961-25.002 7.46 0 11.694 8.67 11.694 22.583 0 17.744-6.049 38.713-15.928 59.482-7.26 15.323-16.736 30.244-27.02 43.754-.2-5.242-.402-10.888-.402-16.937zm-43.352 65.732c12.704-7.057 25.608-17.946 37.504-31.252 3.63 22.985 11.292 30.446 20.365 30.446 10.082 0 19.76-9.276 28.229-26.01v3.225c0 17.34 7.863 22.785 14.92 22.785 10.485 0 20.769-11.695 29.036-30.85-.202 3.428-.202 5.04-.202 7.259 0 17.542 6.452 22.784 13.912 22.784 6.856 0 12.502-4.84 18.55-14.921 1.412-2.419-.402-5.646-3.225-5.646-1.412 0-2.823.807-3.428 2.017-3.63 6.452-7.057 10.888-11.291 10.888-5.848 0-6.452-8.47-6.452-15.122 0-9.679 1.225-25.472 3.024-34.883.48-2.515-1.412-4.637-3.831-4.637-2.017 0-3.63 1.41-4.033 3.024-7.662 27.826-19.558 52.425-30.85 52.425-5.645 0-8.065-6.654-8.065-15.324 0-9.88 2.017-21.777 5.645-35.085.606-2.42-1.209-4.839-3.83-4.839-1.613 0-3.428 1.009-3.832 2.621-9.072 30.245-21.776 52.627-33.269 52.627-8.267 0-12.5-11.292-14.315-29.237 13.105-15.526 24.8-33.471 33.47-51.619 10.284-21.977 16.736-44.157 16.736-62.707C344.587 6.654 334.505 0 325.23 0c-10.888 0-20.97 10.283-28.027 29.842-7.46 21.373-12.098 52.424-12.098 86.702 0 9.275.404 17.34 1.008 24.397-12.5 14.316-26.212 26.616-39.923 34.48-1.814 1.008-2.62 3.428-1.613 5.242 1.008 1.815 3.427 2.621 5.242 1.613zm-68.353 56.054c2.218 0 4.235-1.815 4.235-4.033 0-17.743.806-35.487 2.62-52.827 36.698-3.226 78.839-38.31 78.839-74.806 0-25.204-18.147-39.52-42.141-39.52-23.39 0-53.03 14.719-77.63 39.117-1.612 1.41-1.612 4.032 0 5.645 1.413 1.613 4.034 1.613 5.647 0 22.986-22.38 50.207-36.697 71.781-36.697 19.357 0 33.874 11.493 33.874 31.455 0 32.26-36.899 63.11-69.563 66.539 3.024-25.608 7.864-50.408 14.518-72.185.604-2.016-.807-4.436-2.823-5.042-2.218-.603-4.637.606-5.243 2.622-6.654 22.583-11.694 48.19-14.921 75.008-7.863-.403-14.719-2.42-22.38-6.855-2.017-1.009-4.436-.202-5.647 1.613-1.008 2.016-.2 4.436 1.614 5.645 9.073 4.637 16.937 7.057 25.607 7.662-1.613 17.34-2.622 35.084-2.622 52.626 0 2.218 2.017 4.033 4.235 4.033zm274.22-110.697c1.614 1.21 4.235 1.008 5.444-.604 5.444-6.855 8.671-14.115 8.671-20.365 0-9.275-6.251-15.122-17.743-15.122-22.18 0-43.554 22.582-43.554 39.923 0 11.09 7.662 18.55 22.987 21.373l9.476 1.613c9.88 1.613 16.534 5.04 16.534 11.896 0 7.461-8.267 11.493-16.937 11.493-6.452 0-12.099-2.218-16.534-5.242-1.613-1.21-4.032-.807-5.242.806s-.807 4.033.806 5.242c5.646 4.235 12.905 6.856 20.97 6.856 14.315 0 25.003-8.065 25.003-19.558 0-9.275-7.058-16.333-23.39-19.155l-9.477-1.614c-9.678-1.613-16.13-5.846-16.13-13.912 0-13.913 17.744-32.06 35.285-32.06 6.05 0 9.88 2.622 9.88 8.066 0 4.234-2.42 9.679-6.653 14.92-1.21 1.614-1.009 4.033.604 5.444z"></path></svg>
-            <button type="button">Explora estos alojamientos »</button>
-          </div>
-        </div>
+      <div class="advertency">
+        Lo mejor de Airbnb lo tienes ahora en Airbnb: los peores alojamientos del mundo con el servicio más exclusivo.
       </div>
 
-      <div>
-        <h3>Recomendado para ti</h3>
+      <div class="hotels">
+        <h3>Los alojamientos más extraordinarios del mundo</h3>
+
+        <div>
+          Una selección de alojamientos impecables y diseñados por expertos con servicios de alta gama y diseñadores de
+          viajes a tu disposición.
+        </div>
 
         <div class="w-slider">
           <button type="button" class="c-slider__prev">
-            <svg viewbox="0 0 18 18" role="img" aria-label="Anterior" focusable="false" style="height: 24px; width: 24px; display: block; fill: currentcolor;"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"></path></svg>
+            <svg
+              viewbox="0 0 18 18"
+              role="img"
+              aria-label="Anterior"
+              focusable="false"
+              style="height: 24px; width: 24px; display: block; fill: currentcolor"
+            >
+              <path
+                d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
           </button>
           <div class="c-slider">
             <ul>
-              <li><div><img src="./images/paris.jpg" alt=""><h4>París</h4> <span>93€ de media por noche</span></div></li>
-              <li><div><img src="./images/tokio.jpg" alt=""><h4>Tokio</h4> <span>75€ de media por noche</span></div></li>
-              <li><div><img src="./images/londres.jpg" alt=""><h4>Londres</h4> <span>102€ de media por noche</span></div></li>
-              <li><div><img src="./images/la.jpg" alt=""><h4>Los Ángeles</h4> <span>111€ de media por noche</span></div></li>
-              <li><div><img src="./images/barcelona.jpg" alt=""><h4>Barcelona</h4> <span>80€ de media por noche</span></div></li>
-              <li><div><img src="./images/newyork.jpg" alt=""><h4>Nueva York</h4> <span>96€ de media por noche</span></div></li>
-              <li><div><img src="./images/sanfrancisco.jpg" alt=""><h4>San Francisco</h4> <span>139€ de media por noche</span></div></li>
-              <li><div><img src="./images/lahabana.jpg" alt=""><h4>La Habana</h4> <span>42€ de media por noche</span></div></li>
-              <li><div><img src="./images/sidney.jpg" alt=""><h4>Sidney</h4> <span>102€ de media por noche</span></div></li>
+              <li>
+                <div>
+                  <img src="./images/paris.jpg" alt="" />
+                  <h4>París</h4>
+                  <span>93€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/brooklyn.jpg" alt="" />
+                  <h4>Brooklyn</h4>
+                  <span>120€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/alpes.jpg" alt="" />
+                  <h4>Los Alpes</h4>
+                  <span>240€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/palmsprings.jpg" alt="" />
+                  <h4>Palm Springs</h4>
+                  <span>99€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/tokio.jpg" alt="" />
+                  <h4>Tokio</h4>
+                  <span>75€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/londres.jpg" alt="" />
+                  <h4>Londres</h4>
+                  <span>102€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/la.jpg" alt="" />
+                  <h4>Los Ángeles</h4>
+                  <span>111€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/barcelona.jpg" alt="" />
+                  <h4>Barcelona</h4>
+                  <span>80€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/newyork.jpg" alt="" />
+                  <h4>Nueva York</h4>
+                  <span>96€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/sanfrancisco.jpg" alt="" />
+                  <h4>San Francisco</h4>
+                  <span>139€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/lahabana.jpg" alt="" />
+                  <h4>La Habana</h4>
+                  <span>42€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/costarica.jpg" alt="" />
+                  <h4>Costa Rica</h4>
+                  <span>232€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/angeles.jpg" alt="" />
+                  <h4>Los Ángeles</h4>
+                  <span>51€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/puntamita.jpg" alt="" />
+                  <h4>Punta Mita</h4>
+                  <span>80€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/hawai.jpg" alt="" />
+                  <h4>Hawai</h4>
+                  <span>59€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/sidney.jpg" alt="" />
+                  <h4>Sidney</h4>
+                  <span>102€ de media por noche</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/baires.jpg" alt="" />
+                  <h4>Buenos Aires</h4>
+                  <span>100€ de media por noche</span>
+                </div>
+              </li>
             </ul>
           </div>
           <button type="button" class="c-slider__next">
-            <svg viewbox="0 0 18 18" role="img" aria-label="Siguiente" focusable="false" style="height: 24px; width: 24px; display: block; fill: currentcolor;"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"></path></svg>
+            <svg
+              viewbox="0 0 18 18"
+              role="img"
+              aria-label="Siguiente"
+              focusable="false"
+              style="height: 24px; width: 24px; display: block; fill: currentcolor"
+            >
+              <path
+                d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
-    </section>
-  </main>
-</body>
+
+      <div class="hotels">
+        <h3>Por qué Airbnb es diferente</h3>
+        <div class="whygroup">
+          <div class="why">
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style="display: block; height: 32px; width: 32px; fill: currentcolor"
+            >
+              <path
+                d="M15 22.938a8.002 8.002 0 0 1-6.996-7.679L8 15v-.342a6.334 6.334 0 0 1 0-12.65V2h16c3.343.183 6 2.948 6 6.333a6.334 6.334 0 0 1-5.999 6.325L24 15a8.001 8.001 0 0 1-6.999 7.938L17 28h5v2H10v-2h5v-5.062zM22 4H10v11a6 6 0 0 0 5.552 5.984l.223.012L16 21a6 6 0 0 0 5.996-5.775L22 15V4zM4 8.333a4.334 4.334 0 0 0 4 4.321V4.013c-2.238.17-4 2.04-4 4.32zm20.001-4.32v8.64a4.334 4.334 0 0 0 0-8.64z"
+              ></path>
+            </svg>
+            <div class="why-title">Espacios decorados por amateurs</div>
+            <div class="why-desc">
+              Alojamientos extraordinarios con un diseño de interiores que los hace únicos de lo feos que son.
+            </div>
+          </div>
+
+          <div class="why">
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style="display: block; height: 32px; width: 32px; fill: currentcolor"
+            >
+              <path
+                d="M21 3a2 2 0 0 1 1.995 1.85L23 5v7a6.996 6.996 0 0 1-2.226 5.12l-.2.181-.023.018.28.108a13.014 13.014 0 0 1 8.083 10.574h-2.016c-.634-4.631-4.16-8.401-8.789-9.298l-.109-.02.001-2.1a5.003 5.003 0 0 0 2.978-4.128l.016-.227L21 12l-.001-3h-10L11 12a5 5 0 0 0 3 4.583v2.098a10.922 10.922 0 0 0-3.001 1.017L11 28H9v-6.987a11.009 11.009 0 0 0-3.898 6.988L3.086 28a13.018 13.018 0 0 1 7.795-10.455l.288-.119.279-.109-.232-.206a6.995 6.995 0 0 1-2.193-4.543l-.018-.296L9 12V5a2 2 0 0 1 1.85-1.995L11 3zm-3 23a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7-17H11l-.001 2h10z"
+              ></path>
+            </svg>
+            <div class="why-title">Servicios lamentables</div>
+            <div class="why-desc">
+              Nada equipado sentirás que te falta de todo en un espacio pequeño y sin ninguna privacidad.
+            </div>
+          </div>
+
+          <div class="why">
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style="display: block; height: 32px; width: 32px; fill: currentcolor"
+            >
+              <path
+                d="m11.6667 0-.00095 1.666h8.667l.00055-1.666h2l-.00055 1.666 6.00065.00063c1.0543745 0 1.9181663.81587127 1.9945143 1.85073677l.0054857.14926323v15.91907c0 .4715696-.1664445.9258658-.4669028 1.2844692l-.1188904.1298308-8.7476886 8.7476953c-.3334303.3332526-.7723097.5367561-1.2381975.5778649l-.1758207.0077398h-12.91915c-2.68874373 0-4.88181754-2.1223321-4.99538046-4.7831124l-.00461954-.2168876v-21.66668c0-1.05436021.81587582-1.91815587 1.85073739-1.99450431l.14926261-.00548569 5.999-.00063.00095-1.666zm16.66605 11.666h-24.666v13.6673c0 1.5976581 1.24893332 2.9036593 2.82372864 2.9949072l.17627136.0050928 10.999-.0003.00095-5.6664c0-2.6887355 2.122362-4.8818171 4.7832071-4.9953804l.2168929-.0046196 5.66595-.0006zm-.081 8-5.58495.0006c-1.5977285 0-2.9037573 1.2489454-2.9950071 2.8237299l-.0050929.1762701-.00095 5.5864zm-18.586-16-5.999.00062v5.99938h24.666l.00065-5.99938-6.00065-.00062.00055 1.66733h-2l-.00055-1.66733h-8.667l.00095 1.66733h-2z"
+              ></path>
+            </svg>
+            <div class="why-title">Itinerarios de siempre</div>
+            <div class="why-desc">
+              Tu diseñador de viajes planificará hasta el último detalle y comprobará que todo esté en orden.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotels">
+        <h4 style="text-align: center">Viajes diseñados a medida</h4>
+
+        <div style="text-align: center; font-size: 16px; font-weight: lighter">
+          Cuando reservas un alojamiento Airbnb Luxe, un diseñador de viajes especializado está a tu disposición para
+          ayudarte a organizar la estancia de 5 estrellas que buscas.
+        </div>
+      </div>
+      <div class="" style="padding-left: 0; padding-right: 0">
+        <video class="video" crossorigin="anonymous" playsinline="" autoplay controls loop>
+          <source src="images/video.webm" />
+        </video>
+      </div>
+
+      <div class="more-destinations">
+        <h4>Más destinos en Airbnb</h4>
+
+        <div class="list-h">Australia</div>
+        <div class="list-i">Australia</div>
+        <div class="list-i">Bahía de Byron</div>
+        <div class="list-i">Melbourne</div>
+        <div class="list-i">Queensland</div>
+        <div class="list-i">Queensland - Noosa</div>
+        <div class="list-i">Sídney</div>
+        <div class="list-h">Austria</div>
+        <div class="list-i">Austria</div>
+        <div class="list-i">Alpes austríacos - Lech</div>
+        <div class="list-h">Canadá</div>
+        <div class="list-i">Canadá</div>
+        <div class="list-i">Whistler</div>
+        <div class="list-h">Caribe</div>
+        <div class="list-i">Anguila</div>
+        <div class="list-i">Anguila - Little Harbor</div>
+        <div class="list-i">Antigua</div>
+        <div class="list-i">Antigua - Jolly Harbour</div>
+        <div class="list-i">Antigua - Long Island</div>
+        <div class="list-i">Bahamas</div>
+        <div class="list-i">Bahamas - Eleuthera e Isla Harbour</div>
+        <div class="list-i">Bahamas - Nassau e Isla Paraíso</div>
+        <div class="list-i">Barbados</div>
+        <div class="list-i">Barbados - Gibbs Beach</div>
+        <div class="list-i">Barbados - Bahía de Paynes</div>
+        <div class="list-i">Barbados - Sandy Lane</div>
+        <div class="list-i">Barbados - Speightstown</div>
+        <div class="list-i">Barbados - Saint James</div>
+        <div class="list-i">Barbados - Saint Peter</div>
+        <div class="list-i">Barbados - The Garden</div>
+        <div class="list-i">Islas Vírgenes Británicas</div>
+        <div class="list-i">Caribe</div>
+        <div class="list-i">Islas Caimán</div>
+        <div class="list-i">Islas Caimán - Rum Point</div>
+        <div class="list-i">República Dominicana</div>
+        <div class="list-i">República Dominicana - La Romana</div>
+        <div class="list-i">República Dominicana - Punta Cana</div>
+        <div class="list-i">Jamaica</div>
+        <div class="list-i">Jamaica - Bahía de Montego</div>
+        <div class="list-i">Jamaica - Ocho Ríos</div>
+        <div class="list-i">Jamaica - Oracabessa</div>
+        <div class="list-i">San Bartolomé</div>
+        <div class="list-i">San Bartolomé - Colombier</div>
+        <div class="list-i">Santa Lucía</div>
+        <div class="list-i">Santa Lucía - Bahía de Marigot</div>
+        <div class="list-i">San Martín</div>
+        <div class="list-i">Tórtola</div>
+        <div class="list-i">Islas Turcas y Caicos</div>
+        <div class="list-i">Islas Turcas y Caicos - Grace Bay</div>
+        <div class="list-i">Islas Turcas y Caicos - Leeward</div>
+        <div class="list-i">Islas Turcas y Caicos - Playa de Long Bay</div>
+        <div class="list-i">Islas Turcas y Caicos - Parrot Cay</div>
+        <div class="list-i">Islas Vírgenes de los Estados Unidos</div>
+        <div class="list-h">Centroamérica</div>
+        <div class="list-i">Centroamérica</div>
+        <div class="list-i">Costa Rica</div>
+        <div class="list-i">Costa Rica - Las Catalinas</div>
+        <div class="list-i">Costa Rica - Los Sueños</div>
+        <div class="list-i">Costa Rica - Papagayo</div>
+        <div class="list-i">Costa Rica - Playa Flamingo</div>
+        <div class="list-i">Costa Rica - Playa de Santa Teresa</div>
+        <div class="list-i">Costa Rica - Tamarindo</div>
+        <div class="list-i">San Pedro</div>
+        <div class="list-h">Croacia</div>
+        <div class="list-i">Croacia</div>
+        <div class="list-i">Riviera de Dubrovnik</div>
+        <div class="list-i">Costa de Split - Brač</div>
+        <div class="list-i">Costa de Split - Korčula</div>
+        <div class="list-i">Costa de Split - Okrug Gornji</div>
+        <div class="list-i">Costa de Split - Primosten</div>
+        <div class="list-i">Inglaterra</div>
+        <div class="list-h">Cotswolds</div>
+        <div class="list-i">Inglaterra</div>
+        <div class="list-i">Gloucestershire</div>
+        <div class="list-i">Londres</div>
+        <div class="list-i">Oxfordshire</div>
+        <div class="list-h">Francia</div>
+        <div class="list-i">Burdeos</div>
+        <div class="list-i">Francia</div>
+        <div class="list-i">Alpes franceses</div>
+        <div class="list-i">Alpes franceses - Chamonix</div>
+        <div class="list-i">Alpes franceses - Courchevel</div>
+        <div class="list-i">Alpes franceses - Megève</div>
+        <div class="list-i">Alpes franceses - Val-d'Isère</div>
+        <div class="list-i">Costa Azul</div>
+        <div class="list-i">Costa Azul - Zona de Cannes</div>
+        <div class="list-i">Costa Azul - Zona de Saint-Tropez</div>
+        <div class="list-i">Provenza</div>
+        <div class="list-i">Provenza - Zona de los Alpilles</div>
+        <div class="list-i">Provenza - Zona de Aviñón</div>
+        <div class="list-i">Provenza - Saint Rémy</div>
+        <div class="list-h">Grecia</div>
+        <div class="list-i">Ática - Atenas</div>
+        <div class="list-i">Corfú</div>
+        <div class="list-i">Creta</div>
+        <div class="list-i">Creta - La Canea</div>
+        <div class="list-i">Creta - Elunda</div>
+        <div class="list-i">Creta - Rétino</div>
+        <div class="list-i">Grecia</div>
+        <div class="list-i">Miconos</div>
+        <div class="list-i">Miconos - Agios Ioannis</div>
+        <div class="list-i">Miconos - Elia</div>
+        <div class="list-i">Paros</div>
+        <div class="list-i">Santorini</div>
+        <div class="list-i">Santorini - Imerovigli</div>
+        <div class="list-i">Zante</div>
+        <div class="list-h">Hawái</div>
+        <div class="list-i">Isla de Hawái</div>
+        <div class="list-i">Hawái</div>
+        <div class="list-i">Kauai</div>
+        <div class="list-i">Kauai - Koloa</div>
+        <div class="list-i">Maui</div>
+        <div class="list-i">Maui - Lahaina</div>
+        <div class="list-i">Maui - Wailea</div>
+        <div class="list-i">Oahu</div>
+        <div class="list-h">Indonesia</div>
+        <div class="list-i">Bali</div>
+        <div class="list-i">Bali - Badung</div>
+        <div class="list-i">Bali - Tabanan</div>
+        <div class="list-i">Bali - Bukit</div>
+        <div class="list-i">Indonesia</div>
+        <div class="list-i">Lombok</div>
+        <div class="list-h">Italia</div>
+        <div class="list-i">Costa de Amalfi</div>
+        <div class="list-i">Costa de Amalfi - Capri</div>
+        <div class="list-i">Costa de Amalfi - Positano</div>
+        <div class="list-i">Costa de Amalfi - Sorrento</div>
+        <div class="list-i">Italia</div>
+        <div class="list-i">Lago de Como - Como</div>
+        <div class="list-i">Apulia</div>
+        <div class="list-i">Apulia - Zona de Ostuni</div>
+        <div class="list-i">Sicilia</div>
+        <div class="list-i">Sicilia - Zona de Siracusa</div>
+        <div class="list-i">Sicilia - Zona de Taormina</div>
+        <div class="list-i">Toscana</div>
+        <div class="list-i">Toscana - Zona de Arezzo</div>
+        <div class="list-i">Toscana - Zona de Chianti</div>
+        <div class="list-i">Toscana - Zona de Florencia</div>
+        <div class="list-i">Toscana - Ciudad de Florencia</div>
+        <div class="list-i">Toscana - Zona de Grosseto</div>
+        <div class="list-i">Toscana - Zona de Lucca</div>
+        <div class="list-i">Toscana - Zona de Montepulciano</div>
+        <div class="list-i">Toscana - Zona de Siena</div>
+        <div class="list-i">Umbría</div>
+        <div class="list-i">Umbría - Zona de Perugia</div>
+        <div class="list-i">Véneto</div>
+        <div class="list-i">Véneto - Venecia</div>
+        <div class="list-h">México</div>
+        <div class="list-i">Costa Careyes</div>
+        <div class="list-i">Los Cabos</div>
+        <div class="list-i">Los Cabos - Cabo de San Lucas - Pedregal</div>
+        <div class="list-i">México</div>
+        <div class="list-i">Puerto Vallarta</div>
+        <div class="list-i">Puerto Vallarta - Conchas Chinas</div>
+        <div class="list-i">Punta Mita</div>
+        <div class="list-i">Riviera Maya</div>
+        <div class="list-i">Riviera Maya - Cancún</div>
+        <div class="list-i">Riviera Maya - Playa del Carmen</div>
+        <div class="list-i">Riviera Maya - Tulum</div>
+        <div class="list-i">Riviera Nayarit</div>
+        <div class="list-i">Riviera Nayarit - Nuevo Vallarta</div>
+        <div class="list-i">Riviera Nayarit - Sayulita</div>
+        <div class="list-h">Marruecos</div>
+        <div class="list-i">Marrakech</div>
+        <div class="list-i">Marruecos</div>
+        <div class="list-h">Nueva Zelanda</div>
+        <div class="list-i">Nueva Zelanda</div>
+        <div class="list-i">Isla Norte</div>
+        <div class="list-i">Isla Norte - Auckland</div>
+        <div class="list-i">Isla Norte - Bahía de las Islas</div>
+        <div class="list-i">Isla Norte - Hawke's Bay</div>
+        <div class="list-i">Isla Norte - Lago Taupo</div>
+        <div class="list-i">Isla Sur</div>
+        <div class="list-i">Isla Sur - Queenstown</div>
+        <div class="list-i">Isla Sur - Wanaka</div>
+        <div class="list-h">Portugal</div>
+        <div class="list-i">Faro</div>
+        <div class="list-i">Lisboa</div>
+        <div class="list-i">Lisboa - Comporta</div>
+        <div class="list-i">Portugal</div>
+        <div class="list-h">Sudáfrica</div>
+        <div class="list-i">Ciudad del Cabo</div>
+        <div class="list-i">Ciudad del Cabo - Bantry Bay</div>
+        <div class="list-i">Ciudad del Cabo - Camps Bay</div>
+        <div class="list-i">Ciudad del Cabo - Centro de Ciudad del Cabo</div>
+        <div class="list-i">Ciudad del Cabo - Clifton</div>
+        <div class="list-i">Ciudad del Cabo - Green Point</div>
+        <div class="list-i">Madikwe Game Reserve</div>
+        <div class="list-i">Mpumalanga</div>
+        <div class="list-i">Mpumalanga - Reserva de caza Sabi Sand</div>
+        <div class="list-i">Sudáfrica</div>
+        <div class="list-h">Pacífico Sur</div>
+        <div class="list-i">Fiyi</div>
+        <div class="list-i">Pacífico Sur</div>
+        <div class="list-h">España</div>
+        <div class="list-i">Barcelona - Sitges</div>
+        <div class="list-i">Costa Brava</div>
+        <div class="list-i">Costa del Sol</div>
+        <div class="list-i">Costa del Sol - Marbella</div>
+        <div class="list-i">Ibiza</div>
+        <div class="list-i">Ibiza - Es Cubells</div>
+        <div class="list-i">Ibiza - San José</div>
+        <div class="list-i">Ibiza - Santa Eulària des Riu</div>
+        <div class="list-i">Mallorca - Andratx</div>
+        <div class="list-i">España</div>
+        <div class="list-h">Suiza</div>
+        <div class="list-i">Alpes suizos</div>
+        <div class="list-i">Alpes suizos - Verbier</div>
+        <div class="list-i">Alpes suizos - Zermatt</div>
+        <div class="list-i">Suiza</div>
+        <div class="list-h">Tailandia</div>
+        <div class="list-i">Koh Samui</div>
+        <div class="list-i">Koh Samui - Bo Put</div>
+        <div class="list-i">Koh Samui - Chaweng</div>
+        <div class="list-i">Koh Samui - Lipa Noi</div>
+        <div class="list-i">Koh Samui - Maenam</div>
+        <div class="list-i">Phang Nga</div>
+        <div class="list-i">Phuket</div>
+        <div class="list-i">Phuket - Choeng Thale</div>
+        <div class="list-i">Phuket - Kamala</div>
+        <div class="list-i">Phuket - Thalang</div>
+        <div class="list-i">Tailandia</div>
+        <div class="list-h">Emiratos Árabes Unidos</div>
+        <div class="list-i">Dubái</div>
+        <div class="list-i">Dubái - Centro de Dubái</div>
+        <div class="list-i">Dubái - Palma Jumeirah</div>
+        <div class="list-i">Emiratos Árabes Unidos</div>
+        <div class="list-h">Estados Unidos</div>
+        <div class="list-i">Arizona</div>
+        <div class="list-i">Arizona - Scottsdale</div>
+        <div class="list-i">Aspen</div>
+        <div class="list-i">Aspen - Snowmass Village</div>
+        <div class="list-i">Big Sky</div>
+        <div class="list-i">Breckenridge</div>
+        <div class="list-i">California</div>
+        <div class="list-i">Ciudades del desierto de California</div>
+        <div class="list-i">Ciudades del desierto de California - Indio</div>
+        <div class="list-i">Ciudades del desierto de California - La Quinta</div>
+        <div class="list-i">Ciudades del desierto de California - Palm Springs</div>
+        <div class="list-i">Hamptons</div>
+        <div class="list-i">Jackson Hole</div>
+        <div class="list-i">Jackson Hole - Teton Village</div>
+        <div class="list-i">Lago Tahoe</div>
+        <div class="list-i">Lago Tahoe - South Lake Tahoe</div>
+        <div class="list-i">Los Ángeles</div>
+        <div class="list-i">Los Ángeles - Beverly Hills</div>
+        <div class="list-i">Los Ángeles - Hollywood</div>
+        <div class="list-i">Los Ángeles - Hollywood Hills</div>
+        <div class="list-i">Los Ángeles - Malibú</div>
+        <div class="list-i">Los Ángeles - Venecia</div>
+        <div class="list-i">Los Ángeles - West Hollywood</div>
+        <div class="list-i">Miami</div>
+        <div class="list-i">Monterrey</div>
+        <div class="list-i">Monterrey - Carmel-by-the-Sea</div>
+        <div class="list-i">Nantucket</div>
+        <div class="list-i">Napa</div>
+        <div class="list-i">Napa - Valle de Napa</div>
+        <div class="list-i">Napa - Sonoma</div>
+        <div class="list-i">Orange County</div>
+        <div class="list-i">Orlando</div>
+        <div class="list-i">Orlando - Reunión</div>
+        <div class="list-i">San Diego</div>
+        <div class="list-i">San Diego - La Jolla</div>
+        <div class="list-i">San Diego - Mission Beach</div>
+        <div class="list-i">Área de la Bahía de San Francisco</div>
+        <div class="list-i">Área de la Bahía de San Francisco - San Francisco</div>
+        <div class="list-i">Santa Bárbara</div>
+        <div class="list-i">Carolina del Sur</div>
+        <div class="list-i">Carolina del Sur - Hilton Head</div>
+        <div class="list-i">Sun Valley</div>
+        <div class="list-i">Telluride</div>
+        <div class="list-i">Telluride - Mountain Village</div>
+        <div class="list-i">Texas</div>
+        <div class="list-i">Texas - Austin</div>
+        <div class="list-i">Estados Unidos</div>
+        <div class="list-i">Utah</div>
+        <div class="list-i">Utah - Deer Valley</div>
+        <div class="list-i">Utah - Park City</div>
+        <div class="list-i">Vail</div>
+        <div class="list-i">Vail - Bachelor Gulch</div>
+        <div class="list-i">Vail - Pueblo de Beaver Creek</div>
+        <div class="list-h">Uruguay</div>
+        <div class="list-i">Maldonado</div>
+        <div class="list-i">Maldonado - Punta del Este</div>
+        <div class="list-i">Uruguay</div>
+        <div class="list-h">En todo el mundo</div>
+        <div class="list-i">África</div>
+        <div class="list-i">Asia</div>
+        <div class="list-i">Europa</div>
+        <div class="list-i">Oriente Medio</div>
+        <div class="list-i">Norteamérica</div>
+        <div class="list-i">Oceanía</div>
+        <div class="list-i">Sudamérica</div>
+      </div>
+    </main>
+  </body>
 </html>
