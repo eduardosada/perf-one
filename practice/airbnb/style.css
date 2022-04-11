@@ -32,6 +32,7 @@ h4 {
   height: 100px;
   top: 20px;
   left: 20px;
+  z-index: 1;
 }
 
 .logo-desktop {
@@ -41,7 +42,7 @@ h4 {
 .hero {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
